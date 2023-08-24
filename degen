@@ -1,0 +1,9 @@
+import requests
+
+api_key = "ВАШ_API_КЛЮЧ"
+text_to_translate = "Hello, how are you?"
+target_language = "ru"
+
+response = requests.get(f"https://translate.yandex.net/api/v1.5/tr.json/translate?key={api_key}&text={text_to_translate}&lang={target_language}")
+translation = response.json()["text"][0]
+print("Перевод:", translation)
